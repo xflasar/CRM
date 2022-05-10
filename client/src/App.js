@@ -13,7 +13,8 @@ import Homepage from './Pages/Homepage';
 import Customers from './Pages/Customers';
 
 const App = () => {
-  //let [customers, setCustomers] = useState([]);
+  let [customers, setCustomers] = useState([]); // Do i have to use this everywhere???
+  
   
   return (
     <div className="App">
@@ -21,7 +22,7 @@ const App = () => {
       <NavBar/>
         <Routes>
           <Route path='/homepage' element={<Homepage/>}/>
-          <Route path='/customers' element={<Customers/>}/>
+          <Route path='/customers' element={<Customers customers={customers}/>}/>
         </Routes>
       </BrowserRouter>
     </div>
